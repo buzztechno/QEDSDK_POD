@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name              = 'QEDSDK'
     s.version           = '1.0.0'
-    s.summary           = 'The QED REST API provides an easy way to leverage blockchain technology attaching immutable timestamps to your files. QEDSDK packages its functionality in an easy to use IOS framework'
+    s.summary           = 'The QED REST API provides an easy way to leverage blockchain technology attaching immutable timestamps to your files.'
     s.homepage          = 'http://qed.digital/'
 
     s.author            = { 'Name' => 'alfonso@buzztechno.com' }
