@@ -1,0 +1,11 @@
+framework module QEDSDK {
+  umbrella header "QEDSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module QEDSDK.Swift {
+    header "QEDSDK-Swift.h"
+    requires objc
+}
