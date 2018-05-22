@@ -184,6 +184,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+/// :nodoc:
 typedef SWIFT_ENUM(NSInteger, DateFormatterStyle) {
   DateFormatterStyleDateTime = 0,
   DateFormatterStyleDateTimeTS = 1,
@@ -198,6 +199,7 @@ typedef SWIFT_ENUM(NSInteger, DateFormatterStyle) {
 enum LogLevel : NSInteger;
 
 /// A utility class to provide custom logging messages to console
+/// :nodoc:
 SWIFT_CLASS("_TtC6QEDSDK8MFLogger")
 @interface MFLogger : NSObject
 /// The current log level to be used when log methods are invoked.
@@ -224,6 +226,7 @@ typedef SWIFT_ENUM(NSInteger, LogLevel) {
 
 
 /// Class in charge of providing networking functionality for the app.
+/// :nodoc:
 SWIFT_CLASS("_TtC6QEDSDK12MFNetworking")
 @interface MFNetworking : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -231,10 +234,10 @@ SWIFT_CLASS("_TtC6QEDSDK12MFNetworking")
 @end
 
 @class NSURLSession;
-@class NSURLSessionDownloadTask;
+@class NSURLSessionDataTask;
 
-@interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionDownloadDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didFinishDownloadingToURL:(NSURL * _Nonnull)location;
+@interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionDataDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
 @end
 
 @class NSURLSessionTask;
@@ -248,10 +251,10 @@ SWIFT_CLASS("_TtC6QEDSDK12MFNetworking")
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
 @end
 
-@class NSURLSessionDataTask;
+@class NSURLSessionDownloadTask;
 
-@interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionDataDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
+@interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionDownloadDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didFinishDownloadingToURL:(NSURL * _Nonnull)location;
 @end
 
 
@@ -264,27 +267,26 @@ SWIFT_CLASS("_TtC6QEDSDK12MFNetworking")
 - (NSString * _Nonnull)stringWithLocalShortDate SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-/// The <code>QEDAPI</code> provides a wrapper class on the QED server REST API.
-SWIFT_CLASS("_TtC6QEDSDK6QEDAPI")
-@interface QEDAPI : MFNetworking
-@end
-
-
-
-
-
 @class NSCoder;
 @class NSBundle;
 
-/// A ViewController providing record and playback video functionality for locally stored video files.
+/// A View Controller providing record and playback video functionality for locally stored video files.
+/// It will switch automatically between video playback and video recording modes depending on the internal value for the local stored video file.
+/// If a local video file is assigned, the controller will be in playback mode, otherwise in recording mode.
+/// If allowed by the <code>QEDVideoPlayRecordViewControllerDelegate</code>, a user can trigger the deletion of the local stored video file. After deletion the controller will switch to recording mode automatically.
 SWIFT_CLASS("_TtC6QEDSDK32QEDVideoPlayRecordViewController")
 @interface QEDVideoPlayRecordViewController : UIViewController
+/// :nodoc:
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
 - (void)viewDidLoad;
+/// :nodoc:
 - (void)viewWillAppear:(BOOL)animated;
+/// :nodoc:
 - (void)viewDidLayoutSubviews;
+/// :nodoc:
 - (void)viewWillDisappear:(BOOL)animated;
+/// :nodoc:
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
