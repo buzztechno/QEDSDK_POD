@@ -1,0 +1,15 @@
+/* 
+  QEDMediaCaptureAndPlayViewController.strings
+  MFSharedLibraries
+
+  Created by Alfonso Hernandez on 12.10.18.
+  
+*/
+
+// *******************************
+// MARK: - Recording Controller Error Messages
+
+// Error description for camera
+
+"CameraAccessDeniedErrorDescription" = "User has denied usage of the cammera to the app. Need to be changed in Settings";
+"NoBackWideAngleCameraErrorDescription" = "Device has no working back wide angle cammera";

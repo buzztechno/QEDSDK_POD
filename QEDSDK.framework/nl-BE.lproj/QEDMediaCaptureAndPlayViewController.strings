@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "869-IC-OyL"; */
+"869-IC-OyL.text" = "00:00:00";
+
+/* Class = "UISegmentedControl"; wv0-Pn-U5b.segmentTitles[0] = "Video"; ObjectID = "wv0-Pn-U5b"; */
+"wv0-Pn-U5b.segmentTitles[0]" = "Video";
+
+/* Class = "UISegmentedControl"; wv0-Pn-U5b.segmentTitles[1] = "Photo"; ObjectID = "wv0-Pn-U5b"; */
+"wv0-Pn-U5b.segmentTitles[1]" = "Foto";
+
+
+// ***************************
+// MARK: - Foutmeldingen van controller opnemen
+
+// Foutbeschrijving voor camera
+
+"CameraAccessDeniedErrorDescription" = "Gebruiker heeft het gebruik van de cammera in de app geweigerd. Moet worden gewijzigd in Instellingen";
+"NoBackWideAngleCameraErrorDescription" = "Apparaat heeft geen werkende groothoek cammera";
