@@ -281,7 +281,7 @@ SWIFT_CLASS("_TtC6QEDSDK36QEDMediaCaptureAndPlayViewController")
 /// :nodoc:
 - (void)viewDidLoad;
 /// :nodoc:
-- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
 /// :nodoc:
 - (void)viewWillDisappear:(BOOL)animated;
 /// :nodoc:
