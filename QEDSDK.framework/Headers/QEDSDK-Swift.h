@@ -243,12 +243,6 @@ SWIFT_CLASS("_TtC6QEDSDK12MFNetworking")
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didFinishDownloadingToURL:(NSURL * _Nonnull)location;
 @end
 
-@class NSURLSessionDataTask;
-
-@interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionDataDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
-@end
-
 
 @interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionDelegate>
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
@@ -258,6 +252,12 @@ SWIFT_CLASS("_TtC6QEDSDK12MFNetworking")
 
 @interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionTaskDelegate>
 - (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
+@end
+
+@class NSURLSessionDataTask;
+
+@interface MFNetworking (SWIFT_EXTENSION(QEDSDK)) <NSURLSessionDataDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
 @end
 
 
@@ -294,18 +294,18 @@ SWIFT_CLASS("_TtC6QEDSDK36QEDMediaCaptureAndPlayViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
-@class AVCapturePhotoOutput;
-@class AVCapturePhoto;
-
-@interface QEDMediaCaptureAndPlayViewController (SWIFT_EXTENSION(QEDSDK)) <AVCapturePhotoCaptureDelegate>
-- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error;
-@end
-
 @class AVCaptureFileOutput;
 @class AVCaptureConnection;
 
 @interface QEDMediaCaptureAndPlayViewController (SWIFT_EXTENSION(QEDSDK)) <AVCaptureFileOutputRecordingDelegate>
 - (void)captureOutput:(AVCaptureFileOutput * _Nonnull)output didFinishRecordingToOutputFileAtURL:(NSURL * _Nonnull)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> * _Nonnull)connections error:(NSError * _Nullable)error;
+@end
+
+@class AVCapturePhotoOutput;
+@class AVCapturePhoto;
+
+@interface QEDMediaCaptureAndPlayViewController (SWIFT_EXTENSION(QEDSDK)) <AVCapturePhotoCaptureDelegate>
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error;
 @end
 
 
